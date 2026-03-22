@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://mush.com.br/branding/favicon.ico" type="image/x-icon">
+    
+    <title>Sugestões - Servidor Mush</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/appdep.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body class="bg-background text-light">
+    
+    <nav class="xl:bg-pink">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-start mx-auto">
+            <div class="flex items-center flex-grow xl:flex-grow-0 bg-pink">
+                <button data-collapse-toggle="navbar-items" type="button" class="absolute top-0 left-0 text-[1.5em] h-[50px] w-[50px] xl:hidden hover:bg-pink-hover transition-colors" aria-controls="navbar-items" aria-expanded="false">
+                <span class="sr-only">Abrir menu</span>
+                <i class="fa fa-bars"></i>
+            </button>
+                <a class="mx-auto hover:filter hover:brightness-90 transition-[filter] py-[10px]" href="https://mush.com.br" title="Início">
+                <img alt="Logo" class="mx-5 h-[30px]" src="/assets/img/mush_flat.svg">
+            </a>
+            </div>
+            <div class="hidden w-full xl:block xl:w-auto flex-grow bg-pink" id="navbar-items">
+                <ul class="font-medium w-full flex flex-col xl:items-center justify-between text-center xl:text-left xl:flex-row">
+                    <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="https://mush.com.br/loja/ranks"><i class="fa fa-shopping-cart"></i> Loja</a></li>
+                    <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors" href="https://forum.mush.com.br"><i class="fa fa-comments"></i> Fórum</a></li>
+                    <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="https://mush.com.br/staff"><i class="fa fa-users"></i> Equipe</a></li>
+                    <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="https://mush.com.br/leaderboard/bedwars"><i class="fa fa-list-ol"></i> Leaderboard</a></li>
+                    <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="https://mush.com.br/punicoes"><i class="fa fa-gavel"></i> Punições</a></li>
+                    <li>
+                        <button class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors w-full" id="help-dropdown-button" data-collapse-toggle="help-dropdown" aria-expanded="false">
+                            <i class="fa fa-question"></i> Ajuda <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <div class="hidden z-10 w-fit m-auto lg:bg-content lg:absolute lg:rounded-b-2xl lg:border border-shine contain-paint" id="help-dropdown">
+                            <ul class="text-sm text-light transition-all px-2" aria-labelledby="help-dropdown-button">
+                                <li><a class="block p-2 my-2 rounded-2xl hover:bg-pink-hover lg:hover:bg-hover" href="https://forum.mush.com.br/category/69/%C3%A1rea-de-atendimento">Área de atendimento</a></li>
+                                <li><a class="block p-2 my-2 rounded-2xl hover:bg-pink-hover lg:hover:bg-hover" href="https://forum.mush.com.br/topic/145928/atendimento-email-de-vendas">Suporte de vendas</a></li>
+                                <li><a class="block p-2 my-2 rounded-2xl hover:bg-pink-hover lg:hover:bg-hover " href="https://mush.com.br/blog/problemas-de-conexao">Problemas de conexão</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="sugestoes.html"><i class="fa fa-lightbulb"></i> Sugestões</a></li>
+                    <form class="block relative order-2 w-fit ml-auto mr-auto my-2 xl:mr-0 xl:my-0" id="search-navbar-form">
+                        <label for="search-navbar-input"></label>
+                        <input type="text" id="search-navbar-input" class="p-3 text-sm rounded-[5rem] placeholder-[#6b6b6b] text-bg-9" placeholder="Procurar jogador..." value="" pattern="[a-zA-Z0-9_\[\]]{1,16}" minlength="1" required title="Usuário válido de Minecraft">
+                        <button id="search-navbar-button" data-redirect-url="https://mush.com.br/player" type="submit" class="absolute top-0 bottom-0 right-3 text-bg-9 transition-transform hover:rotate-[-15deg] duration-200 ease-[cubic-bezier(0.5,0,0,2.75)]"><i class="fa fa-search"></i></button>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-banner bg-center bg-cover w-full flex justify-center items-center" style="height: 120px;">
+        <a href="https://mush.com.br" title="Página inicial">
+            <img class="hover:scale-[1.2] hover:rotate-[-5deg] duration-[250ms] ease-[cubic-bezier(0.5,0,0,1.75)]" style="height: 120px; width: auto;" alt="Logo" src="./assets/img/mushmc_logo_500x500.webp">
+        </a>
+    </div>
+
+    <div class="max-w-screen-xl mx-auto px-3 my-5 motion-opacity-in-0 motion-duration-500">
+        
+        <div class="rounded-3xl bg-content overflow-hidden border border-shine mb-5 flex justify-between items-center flex-wrap" style="padding: 24px; gap: 16px;">
+            <div>
+                <h1 class="font-bold text-2xl uppercase">Sugestões da Comunidade</h1>
+                <p class="text-[#B3B3B3] text-sm mt-1">Tem uma ideia para o servidor? Compartilhe e vote nas melhores!</p>
+            </div>
+            <button id="btn-nova-sugestao" class="font-bold text-[1rem] rounded-3xl bg-pink text-white transition-colors hover:bg-pink-hover" style="padding: 12px 24px;">
+                <i class="fa fa-plus mr-2"></i> Nova Sugestão
+            </button>
+        </div>
+
+        <div class="flex mb-5" style="gap: 12px;">
+            <button class="rounded-3xl bg-head border border-shine font-bold text-sm text-white hover:bg-hover transition-colors" style="padding: 10px 20px;">
+                <i class="fa fa-fire mr-1 text-pink"></i> Em Alta
+            </button>
+            <button class="rounded-3xl bg-head border border-shine font-bold text-sm text-[#B3B3B3] hover:text-white hover:bg-hover transition-colors" style="padding: 10px 20px;">
+                <i class="fa fa-clock mr-1"></i> Mais Recentes
+            </button>
+        </div>
+
+        <div class="post-box rounded-3xl bg-content overflow-hidden border border-shine mb-5 flex flex-col">
+            <div class="flex">
+                <div class="bg-head flex flex-col items-center justify-start border-r border-shine" style="width: 80px; flex-shrink: 0; padding: 20px 0;">
+                    <button class="upvote-btn text-[#B3B3B3] hover:text-[#50D85D] transition-colors text-xl" title="Apoiar sugestão">
+                        <i class="fa fa-chevron-up"></i>
+                    </button>
+                    <span class="vote-count font-bold text-lg text-[#B3B3B3]" style="margin-top: 8px;" data-votes="245">245</span>
+                </div>
+                
+                <div class="p-5 text-[#e6e6e6]" style="flex: 1;">
+                    <div class="flex items-center mb-4" style="gap: 12px;">
+                        <img class="w-7 rounded-3xl" src="./assets/img/FEIJAO.png" alt="Jogador">
+                        <div class="text-sm flex-1">
+                            <a href="https://mush.com.br/player/Feijaoo" target="_blank" class="font-bold hover:underline" style="color: #aa0000;">Feijaoo</a>
+                            <span class="text-[#B3B3B3] ml-2">Há 2 horas</span>
+                        </div>
+                        <span class="bg-[#426F96] border border-[#65AAE6] text-white font-bold rounded-3xl" style="padding: 4px 12px; font-size: 12px;">Bed Wars</span>
+                    </div>
+                    <h2 class="font-bold text-xl mb-3">Adicionar novos itens na loja do Bed Wars</h2>
+                    <p class="text-[#B3B3B3] leading-relaxed mb-5" style="font-size: 15px;">Acho que seria muito legal se a gente tivesse poção de pulo ou blocos de slime disponíveis na loja. Isso ia criar umas dinâmicas de jogo muito mais rápidas e criativas pra invadir as bases inimigas!</p>
+                    <div class="border-t border-shine" style="padding-top: 16px;">
+                        <button class="btn-toggle-comments text-[#B3B3B3] hover:text-white transition-colors font-bold text-sm">
+                            <i class="fa fa-comment-alt mr-1"></i> <span class="qtd-comentarios">32 Comentários</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comments-section bg-head border-t border-shine p-5" style="display: none;">
+                
+                <div class="flex gap-3 mb-6">
+                    <img class="w-8 h-8 rounded-3xl" src="https://pbs.twimg.com/profile_images/1871226612190007297/LQ5hGOlg_400x400.jpg" alt="Seu Avatar">
+                    <div class="flex-1">
+                        <textarea rows="2" placeholder="O que você achou dessa ideia?" style="background: var(--color-content); border: 1px solid var(--color-shine); color: white; padding: 12px; border-radius: 12px; width: 100%; outline: none; resize: vertical;"></textarea>
+                        <div class="flex justify-end mt-2">
+                            <button class="btn-submit-comment font-bold text-sm rounded-3xl bg-pink text-white transition-colors hover:bg-pink-hover" style="padding: 8px 16px;">Enviar Comentário</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 mb-4">
+                    <img class="w-8 h-8 rounded-3xl" src="/assets/img/beqqysftw.png" alt="Jogador">
+                    <div class="flex-1 bg-content border border-shine p-4 rounded-2xl">
+                        <div class="flex items-center gap-2 mb-2">
+                            <a href="#" class="font-bold hover:underline text-white text-sm" style="color: #0000aa;">Beqqysftw</a>
+                           
+                            <span class="text-[#B3B3B3] text-xs ml-auto">Há 1 hora</span>
+                        </div>
+                        <p class="text-[#B3B3B3] text-sm">Apoio muito! Faço rush direto e bloco de slime ia criar umas pontes malucas kkkkk, imagina o tanto de clip que ia gerar.</p>
+                        <div class="flex gap-4 mt-3">
+                            <button class="text-[#B3B3B3] hover:text-white transition-colors font-bold text-xs"><i class="fa fa-reply mr-1"></i> Responder</button>
+                            <button class="text-[#B3B3B3] hover:text-[#50D85D] transition-colors font-bold text-xs"><i class="fa fa-chevron-up mr-1"></i> 15</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-3">
+                    <img class="w-8 h-8 rounded-3xl" src="./assets/img/Start.png" alt="Jogador">
+                    <div class="flex-1 bg-content border border-shine p-4 rounded-2xl">
+                        <div class="flex items-center gap-2 mb-2">
+                            <a href="#" class="font-bold hover:underline text-white text-sm" style="color: #aa0000;;">Start_</a>
+                            <span class="text-[#B3B3B3] text-xs ml-auto">Há 30 min</span>
+                        </div>
+                        <p class="text-[#B3B3B3] text-sm">Poção de pulo eu acho meio quebrado pro BedWars, mas o bloco de slime seria genial.</p>
+                        <div class="flex gap-4 mt-3">
+                            <button class="text-[#B3B3B3] hover:text-white transition-colors font-bold text-xs"><i class="fa fa-reply mr-1"></i> Responder</button>
+                            <button class="text-[#B3B3B3] hover:text-[#50D85D] transition-colors font-bold text-xs"><i class="fa fa-chevron-up mr-1"></i> 4</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="post-box rounded-3xl bg-content overflow-hidden border border-shine mb-5 flex">
+            <div class="bg-head flex flex-col items-center justify-center border-r border-shine" style="width: 80px; flex-shrink: 0; padding: 20px 0;">
+                <button class="upvote-btn text-[#B3B3B3] hover:text-[#50D85D] transition-colors text-xl" title="Apoiar sugestão">
+                    <i class="fa fa-chevron-up"></i>
+                </button>
+                <span class="vote-count font-bold text-lg text-[#B3B3B3]" style="margin-top: 8px;" data-votes="18">18</span>
+            </div>
+            
+            <div class="p-5 text-[#e6e6e6]" style="flex: 1;">
+                <div class="flex items-center mb-4" style="gap: 12px;">
+                    <img class="w-7 rounded-3xl" src="./assets/img/Captura de tela 2026-03-22 122423.png" alt="Jogador">
+                    <div class="text-sm flex-1">
+                        <a href="https://mush.com.br/player/seipartir" target="_blank" class="font-bold hover:underline text-white" style="color: #55ff55;">seipartir</a>
+                        <span class="text-[#B3B3B3] ml-2">Ontem</span>
+                    </div>
+                    <span class="bg-pink text-white font-bold rounded-3xl" style="padding: 4px 12px; font-size: 12px;">Servidor</span>
+                </div>
+                <h2 class="font-bold text-xl mb-3">Cor de tag exclusiva para clãs de 5+ anos</h2>
+                <p class="text-[#B3B3B3] leading-relaxed mb-5" style="font-size: 15px;">Sugiro adicionar uma cor de tag diferenciada e exclusiva para clãs com 5 anos ou mais de criação.</p>
+                <div class="border-t border-shine" style="padding-top: 16px;">
+                    <button class="text-[#B3B3B3] hover:text-white transition-colors font-bold text-sm">
+                        <i class="fa fa-comment-alt mr-1"></i> 5 Comentários
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-sugestao" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 100; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
+        <div class="bg-content border border-shine rounded-3xl p-6" style="width: 90%; max-w: 600px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div class="flex justify-between items-center mb-5 border-b border-shine pb-4">
+                <h2 class="text-2xl font-bold uppercase text-white">Criar Nova Sugestão</h2>
+                <button id="btn-fechar-modal" class="text-[#B3B3B3] hover:text-white text-2xl transition-colors"><i class="fa fa-times"></i></button>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-[#B3B3B3] text-sm font-bold mb-2">Título da Sugestão</label>
+                <input type="text" placeholder="Ex: Adicionar novo modo de jogo..." style="background: var(--color-head); border: 1px solid var(--color-shine); color: white; padding: 12px; border-radius: 12px; width: 100%; outline: none;">
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-[#B3B3B3] text-sm font-bold mb-2">Categoria</label>
+                <select style="background: var(--color-head); border: 1px solid var(--color-shine); color: white; padding: 12px; border-radius: 12px; width: 100%; outline: none; appearance: none;">
+                    <option style="color: black;">Geral / Servidor</option>
+                    <option style="color: black;">Bed Wars</option>
+                    <option style="color: black;">Sky Wars</option>
+                    <option style="color: black;">Duels</option>
+                    <option style="color: black;">Fórum / Site</option>
+                </select>
+            </div>
+            
+            <div class="mb-5">
+                <label class="block text-[#B3B3B3] text-sm font-bold mb-2">Detalhes</label>
+                <textarea rows="4" placeholder="Explique sua ideia detalhadamente para a comunidade entender..." style="background: var(--color-head); border: 1px solid var(--color-shine); color: white; padding: 12px; border-radius: 12px; width: 100%; outline: none; resize: vertical;"></textarea>
+            </div>
+            
+            <div class="flex justify-end gap-3">
+                <button id="btn-cancelar-modal" class="font-bold text-[1rem] rounded-3xl bg-head text-white border border-shine transition-colors hover:bg-hover" style="padding: 10px 20px;">Cancelar</button>
+                <button class="font-bold text-[1rem] rounded-3xl bg-pink text-white transition-colors hover:bg-pink-hover" style="padding: 10px 20px;">Publicar Sugestão</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        const modal = document.getElementById('modal-sugestao');
+        const btnNovaSugestao = document.getElementById('btn-nova-sugestao');
+        const btnFechar = document.getElementById('btn-fechar-modal');
+        const btnCancelar = document.getElementById('btn-cancelar-modal');
+
+        btnNovaSugestao.addEventListener('click', () => modal.style.display = 'flex');
+        btnFechar.addEventListener('click', () => modal.style.display = 'none');
+        btnCancelar.addEventListener('click', () => modal.style.display = 'none');
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+        });
+
+        
+        const postBoxes = document.querySelectorAll('.post-box');
+        
+        postBoxes.forEach(post => {
+            const upBtn = post.querySelector('.upvote-btn');
+            const countSpan = post.querySelector('.vote-count');
+            
+            
+            const baseVotes = parseInt(countSpan.getAttribute('data-votes'));
+            let hasVoted = false; 
+            
+            upBtn.addEventListener('click', () => {
+                hasVoted = !hasVoted; 
+                
+                if (hasVoted) {
+                    
+                    countSpan.innerText = baseVotes + 1;
+                    countSpan.style.color = '#50D85D';
+                    upBtn.style.color = '#50D85D';
+                } else {
+                    
+                    countSpan.innerText = baseVotes;
+                    countSpan.style.color = '#B3B3B3';
+                    upBtn.style.color = '#B3B3B3';
+                }
+            });
+        });
+        
+        // NOVA Lógica de abrir/fechar comentários
+        const toggleCommentBtns = document.querySelectorAll('.btn-toggle-comments');
+        
+        toggleCommentBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Acha a div principal do post
+                const postBox = e.target.closest('.post-box');
+                // Acha a seção de comentários dentro desse post
+                const commentsSection = postBox.querySelector('.comments-section');
+                
+                if (commentsSection) {
+                    if (commentsSection.style.display === 'none') {
+                        commentsSection.style.display = 'block';
+                        btn.style.color = 'white'; // Deixa o botão branco pra indicar que tá aberto
+                    } else {
+                        commentsSection.style.display = 'none';
+                        btn.style.color = '#B3B3B3'; // Volta a ficar cinza
+                    }
+                }
+            });
+        });
+        
+        // Lógica para ENVIAR o comentário fake (VERSÃO BLINDADA)
+        const submitBtns = document.querySelectorAll('.btn-submit-comment');
+        
+        submitBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const commentsSection = e.target.closest('.comments-section');
+                const textarea = commentsSection.querySelector('textarea');
+                const commentText = textarea.value.trim(); // Pega o texto e tira espaços vazios
+                
+                // Só envia se o cara tiver digitado alguma coisa
+                if (commentText !== '') {
+                    
+                    // HTML do novo comentário (Com easter egg de Admin!)
+                    const newComment = `
+                        <div class="flex gap-4 mb-6">
+                            <img class="w-10 h-10 rounded-3xl" src="https://pbs.twimg.com/profile_images/1871226612190007297/LQ5hGOlg_400x400.jpg" alt="Avatar">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <a href="#" class="font-bold hover:underline text-sm text-[#FF5555]">AvaliadorMush</a>
+                                    <span class="bg-[#AA0000] text-white font-bold rounded-3xl" style="padding: 2px 8px; font-size: 10px;">STAFF</span>
+                                </div>
+                                <p class="text-[#e6e6e6] text-sm leading-relaxed mb-2">${commentText}</p>
+                                <div class="flex items-center gap-4">
+                                    <button class="text-[#B3B3B3] hover:text-white transition-colors font-bold text-xs uppercase"><i class="fa fa-reply mr-1"></i> Responder</button>
+                                    <span class="text-[#B3B3B3] text-xs">Agora mesmo</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    
+                    const caixaPrincipalDoInput = textarea.closest('.flex-1').parentElement;
+                    caixaPrincipalDoInput.insertAdjacentHTML('afterend', newComment);
+                    
+                    
+                    textarea.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
