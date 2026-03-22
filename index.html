@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="https://mush.com.br/branding/favicon.ico" type="image/x-icon">
     
-    <title>Sugestões - Servidor Mush</title>
+    <title>Sugestões | Mush</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,10 +35,12 @@
                     <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="https://mush.com.br/staff"><i class="fa fa-users"></i> Equipe</a></li>
                     <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="https://mush.com.br/leaderboard/bedwars"><i class="fa fa-list-ol"></i> Leaderboard</a></li>
                     <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="https://mush.com.br/punicoes"><i class="fa fa-gavel"></i> Punições</a></li>
+                     <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="sugestoes.html"><i class="fa fa-lightbulb"></i> Sugestões</a></li>
                     <li>
                         <button class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors w-full" id="help-dropdown-button" data-collapse-toggle="help-dropdown" aria-expanded="false">
                             <i class="fa fa-question"></i> Ajuda <i class="fa fa-chevron-down"></i>
                         </button>
+                        
                         <div class="hidden z-10 w-fit m-auto lg:bg-content lg:absolute lg:rounded-b-2xl lg:border border-shine contain-paint" id="help-dropdown">
                             <ul class="text-sm text-light transition-all px-2" aria-labelledby="help-dropdown-button">
                                 <li><a class="block p-2 my-2 rounded-2xl hover:bg-pink-hover lg:hover:bg-hover" href="https://forum.mush.com.br/category/69/%C3%A1rea-de-atendimento">Área de atendimento</a></li>
@@ -47,7 +49,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a class="block m-0 py-5 px-3 hover:bg-pink-hover transition-colors " href="sugestoes.html"><i class="fa fa-lightbulb"></i> Sugestões</a></li>
+                   
                     <form class="block relative order-2 w-fit ml-auto mr-auto my-2 xl:mr-0 xl:my-0" id="search-navbar-form">
                         <label for="search-navbar-input"></label>
                         <input type="text" id="search-navbar-input" class="p-3 text-sm rounded-[5rem] placeholder-[#6b6b6b] text-bg-9" placeholder="Procurar jogador..." value="" pattern="[a-zA-Z0-9_\[\]]{1,16}" minlength="1" required title="Usuário válido de Minecraft">
@@ -217,7 +219,7 @@
             
             <div class="flex justify-end gap-3">
                 <button id="btn-cancelar-modal" class="font-bold text-[1rem] rounded-3xl bg-head text-white border border-shine transition-colors hover:bg-hover" style="padding: 10px 20px;">Cancelar</button>
-                <button class="font-bold text-[1rem] rounded-3xl bg-pink text-white transition-colors hover:bg-pink-hover" style="padding: 10px 20px;">Publicar Sugestão</button>
+                <button id="btn-publicar-sugestao" class="font-bold text-[1rem] rounded-3xl bg-pink text-white transition-colors hover:bg-pink-hover" style="padding: 10px 20px;">Publicar Sugestão</button>
             </div>
         </div>
     </div>
@@ -326,6 +328,26 @@
                 }
             });
         });
+        
+const btnPublicar = document.getElementById('btn-publicar-sugestao');
+
+btnPublicar.addEventListener('click', () => {
+    
+    const titulo = modal.querySelector('input[type="text"]').value;
+
+    if (titulo.trim() === "") {
+        alert("Por favor, dê um título para sua sugestão!");
+        return;
+    }
+
+    
+    alert("🎉 Sugestão '" + titulo + "' enviada com sucesso!\n\n(Nota: Este é um protótipo funcional. Em um sistema real, sua sugestão apareceria na lista agora).");
+
+    
+    modal.style.display = 'none';
+    modal.querySelector('input[type="text"]').value = '';
+    modal.querySelector('textarea').value = '';
+});
     </script>
 </body>
 </html>
