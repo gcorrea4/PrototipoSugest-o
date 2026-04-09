@@ -7,6 +7,16 @@
   <img src="https://img.shields.io/badge/Open%20Source-000000?style=for-the-badge&logo=github&logoColor=white" />
 </div>
 
+
+<div align="center">
+  <img src="assets/img/pc-screenshot.png" alt="MushMC Suggestion Page Preview" width="100%">
+</div>
+
+<div align="center">
+  <img src="assets/img/mobile-screenshot.png" alt="MushMC Suggestion Page Preview Mobile" width="100%">
+</div>
+
+
 ---
 
 ## 🌐 Live Demo
