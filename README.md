@@ -20,7 +20,7 @@
 ---
 
 ## 🌐 Live Demo
-[**Click here to view the project in your browser**](https://gcorrea4.github.io/PrototipoSugest-o/)
+[**Click here to view the project in your browser**](https://gcorrea4.github.io/mush-suggestions-prototype/)
 
 ---
 
